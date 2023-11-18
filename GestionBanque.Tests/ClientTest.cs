@@ -26,23 +26,56 @@ namespace GestionBanque.Tests
         {
             // Préparation
             Client client = new Client(1, "test123", "client", "client@test.com");
-            string nomAttendu = "test124";
-        
+            string nomAttendu = "test123";
+
             //clientAttendu.Comptes.Add(new Compte(1, "9864", 831.76, 1));
             //clientAttendu.Comptes.Add(new Compte(2, "2370", 493.04, 1));
 
             // Exécution
-            //Client? clientActuel = ds.Get(1);
+            client.Nom = nomAttendu;
 
             // Affirmation
             Assert.Equal(client.Nom, nomAttendu);
         }
 
+
         [Fact]
         [AvantApresDataService(CheminBd)]
-        public void Retirer_ShouldNotBeValid()
+        public void SetPrenom_ShouldBeValid()
         {
+            // Préparation
+            Client client = new Client(1, "test123", "client", "client@test.com");
+            string prenomAttendu = "client";
 
+            //clientAttendu.Comptes.Add(new Compte(1, "9864", 831.76, 1));
+            //clientAttendu.Comptes.Add(new Compte(2, "2370", 493.04, 1));
+
+            // Exécution
+            client.Prenom = prenomAttendu;
+
+            // Affirmation
+            Assert.Equal(client.Prenom, prenomAttendu);
         }
+
+
+        [Fact]
+        [AvantApresDataService(CheminBd)]
+        public void SetCourriel_ShouldBeValid()
+        {
+            // Préparation
+            Client client = new Client(1, "test123", "client", "client@test.com");
+            string courrielAttendu = "client@test.com";
+
+            //clientAttendu.Comptes.Add(new Compte(1, "9864", 831.76, 1));
+            //clientAttendu.Comptes.Add(new Compte(2, "2370", 493.04, 1));
+
+            // Exécution
+            client.Courriel = courrielAttendu;
+
+            // Affirmation
+            Assert.Equal(client.Courriel, courrielAttendu);
+        }
+
+
     }
 }

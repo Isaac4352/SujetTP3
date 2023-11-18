@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EOj/7u3SZNduid9ostvs7SRVcbMmYAeYPyRwkpAY+Os15f/pOPG2lYTIsuxji/NodfPu21KyhdBRNkVLdU/GlA==",
+  "dgSpecHash": "+EBogrMLr2R2rcOFXM4gSpD+64MSh0Ix3GBsUC+qTvkwrfjwmCv3ejBecVlk9VIA0e9zAiZKUCMD7QcMTCa9aQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\isaac\\OneDrive\\Documents\\college\\sujet_speciaux\\GestionBanque\\GestionBanque\\GestionBanque\\GestionBanque.csproj",
+  "projectFilePath": "C:\\Users\\isaac\\OneDrive\\Documents\\college\\sujet_speciaux\\GestionBanque\\GestionBanque\\SujetTP3\\GestionBanque\\GestionBanque.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isaac\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\isaac\\.nuget\\packages\\autofac.configuration\\6.0.0\\autofac.configuration.6.0.0.nupkg.sha512",

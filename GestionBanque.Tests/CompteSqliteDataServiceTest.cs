@@ -31,6 +31,7 @@ namespace GestionBanque.Tests
         }
 
         [Fact]
+        [AvantApresDataService(CheminBd)]
         public void Retirer_shouldBeValid()
         {
             // Préparation
@@ -43,9 +44,19 @@ namespace GestionBanque.Tests
             // Affirmation
             //Assert.Equal(compteAttendu, compteActuel);
         }
-        public void Retirer(double montant)
+        [Fact]
+        [AvantApresDataService(CheminBd)]
+        public void Update_ShouldBeValid()
         {
+            // Préparation
+            CompteSqliteDataService ds = new CompteSqliteDataService(CheminBd);
+            Compte compteActuel = new Compte(1, "9864", 831.76, 1);
 
+            // Exécution
+            bool update = ds.Update(compteActuel);
+
+            // Affirmation
+            Assert.True(update);
         }
     }
 }

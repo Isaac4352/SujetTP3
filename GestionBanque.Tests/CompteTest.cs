@@ -1,6 +1,7 @@
 ﻿using GestionBanque.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,8 @@ namespace GestionBanque.Tests
             double montantDebut = 23.53;
             Compte compte = new Compte(1, "23", montantDebut, 1);
             double montantDepose = 12.23;
-
+            Console.WriteLine(compte.Balance);
+            Debug.WriteLine(compte.Balance);
             // Exécution
             compte.Deposer(montantDepose);
 

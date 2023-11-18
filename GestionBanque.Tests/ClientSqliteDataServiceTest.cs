@@ -1,6 +1,7 @@
 ﻿
 using GestionBanque.Models.DataService;
 using GestionBanque.Models;
+using System.Diagnostics;
 
 namespace GestionBanque.Tests
 {
@@ -51,5 +52,58 @@ namespace GestionBanque.Tests
             Assert.NotEqual(clientAttendu, clientActuel);
         }
 
+
+        [Fact]
+        [AvantApresDataService(CheminBd)]
+        public void GetAll_ShouldBeValid() //a faire
+        {
+            // Préparation
+            ClientSqliteDataService ds = new ClientSqliteDataService(CheminBd);
+            Client clientAttendu = new Client(1, "Amar", "Quentin", "quentin@gmail.com");
+
+            // Exécution
+            IEnumerable<Client> clientsActuel = ds.GetAll();
+
+            Debug.WriteLine(clientsActuel);  
+            Console.WriteLine(clientsActuel);
+
+            // Affirmation
+            Assert.True(clientsActuel.Any());
+        }
+
+        [Fact]
+        [AvantApresDataService(CheminBd)]
+        public void RecuperComptes_ShouldNotBeValid()
+        {
+            // Préparation
+            ClientSqliteDataService ds = new ClientSqliteDataService(CheminBd);
+            Client clientAttendu = ds.Get(1);
+
+            // Exécution
+            
+            ds.RecupererComptes(clientAttendu);
+
+
+            // Affirmation
+            Assert.NotEmpty(clientAttendu.Comptes);
+        }
+
+
+        [Fact]
+        [AvantApresDataService(CheminBd)]
+        public void Update_ShouldNotBeValid() //a faire
+        {
+            // Préparation
+            ClientSqliteDataService ds = new ClientSqliteDataService(CheminBd);
+            Client clientAttendu = ds.Get(1);
+
+            // Exécution
+
+            ds.RecupererComptes(clientAttendu);
+
+
+            // Affirmation
+            Assert.True(ds.Update(clientAttendu)) ;
+        }
     }
 }

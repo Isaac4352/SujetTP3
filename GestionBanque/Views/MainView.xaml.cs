@@ -12,8 +12,7 @@ namespace GestionBanque.Views
         {
             InitializeComponent();
             InteractionUtilisateurGui iug = new InteractionUtilisateurGui();
-            DataContext = new MainViewModel(iug, new BanqueViewModel(iug, new ClientSqliteDataService("banque.bd"), new CompteSqliteDataService("banque.bd")));
-            //DataContext = FournisseurDI.Container.Resolve<MainViewModel>();
+            DataContext = FournisseurDI.Container.Resolve<MainViewModel>();
         }
     }
 }
